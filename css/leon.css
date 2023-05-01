@@ -1,0 +1,351 @@
+:root
+{
+    --lon:#18b9aa;
+    --secondary-color:#2c4755;
+}
+html{scroll-behavior: smooth;}/*kda b2lo lma ados 3la al link w agy anzl le al div bta3o yt7rk smooth*/
+*{box-sizing: border-box;}
+body{font-family: "work sans" , sans-serif;}
+/* small */
+@media (min-width:768px){.container{width: 750px;}}
+/* medium */
+@media (min-width:992px){.container{width: 970px;}}
+/* large */
+@media (min-width:1200px){.container{width: 1170px;}}
+/* **************************************************************** */
+/*h3ml heading h7tago*/
+.special-heading{
+    color: #ddd;
+    font-size: 100px;/*hns8r al 100px deh fe almobile*/
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: -3px;
+    margin: 0;
+}
+.special-heading + p/*kda b2olo al p aly gy b3 alheading*/
+{
+    margin: -25px 0 0;
+    font-size: 20px;
+    text-align: center;
+    color: #777;
+}
+@media (max-width:767px)
+{
+.special-heading{font-size: 60px;}
+.special-heading + p{margin-top: -20px;}
+}
+.container{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto
+}
+
+/* hbd2 hna b2a alcode bta3y */
+.header{
+    padding: 20px;
+    background-color: #f6f6f6;
+}
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .container .logo{width: 70px;}
+.header .container .links {position: relative;}
+.header .container .links:hover ul {display: block;}
+.header .container .links:hover .icon span:nth-child(2)
+                                /* b2olo hna lma 2a2of 3la al links khlely al width bta3 span 2 100% */
+{width: 100%;}
+.header .container .links .icon
+{
+    width: 30px ;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+}
+.header .container .links .icon span{
+    background-color: #333;
+    margin-bottom: 5px;
+    height: 2px;/*kolohom h3mlohom height 3px*/
+    width: 100%;/*kolohom h3mlohom width 100% m3ada aly fe alnos*/
+}
+.header .container .links .icon span:nth-child(2)
+{
+    width: 60%;
+    transition: .5s;
+}
+.header .container .links ul
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #d6d6d6;
+    min-width: 200px;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 15px);
+    display: none;
+    z-index: 1;
+}
+.header .container .links ul::before
+{
+    content: "";
+    border: 10px solid black;
+    border-color: transparent transparent #d6d6d6 transparent;
+    position: absolute;
+    top: -20px;
+    right: 5px;
+}
+.header .container .links ul li a
+{
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: #333;
+    transition: .5s;
+}
+.header .container .links ul li a:hover
+{padding-left: 25px;}/*3mltlo padding 34an lma 2a2of 3leh yt7rk */
+.header .container .links ul li:not(:last-child) a
+/*h3ml le kol al lists padding m3ada 2a5r wa7da*/
+{border-bottom: 2px solid gray;}
+/********************************kda khlas khlst al header***********************************
+********************************************************************************************/
+.landing
+{
+    background-image: url(../images/pexels-pixabay-355770.jpg);
+    background-size: cover;
+    height: calc(100vh - 68px);/*al 68 dol bto3 al header*/
+    position: relative;
+}
+.landing .intro-text
+{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50% , -50%);
+    /* mmkn brdo a7ot alklam fe alnos be al flex bs hktb al flex fe al up bta3o (landing) */
+    text-align: center;
+    width: 320px;
+    max-width: 100%;/*34an lw al4a4a kbrt metl34 bra */
+    
+}
+.landing .intro-text p
+{
+    font-size: 18px;
+    line-height: 1.5;
+}
+.landing .intro-text h1
+{
+    margin: 0 auto;
+    color: var(--lon);
+    font-size: 50px;
+    font-weight: bold;
+}
+/*******************************kda khlst al intro aw landing *************************
+**************************************************************************************/
+.features
+{
+    background-color: #f6f6f6;
+    padding: 60px;
+}
+.features .container
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    gap: 20px;
+}
+.features .container .feat 
+{
+    padding: 20px;
+    text-align: center;
+
+}
+.features .container .feat i
+{
+    color: var(--lon);
+    font-size: 50px;
+} 
+.features .container .feat h3{font-weight: 800; margin: 30px 0;}
+.features .container .feat p{line-height: 1.5; color: #777; font-size: 17px;}
+/*************************************hbd2 fe al services***********************************
+************************************************************************/
+.services
+{
+    padding: 60px ;
+    /* margin:  auto; */
+}
+/* .services-container{margin: 5px auto;} */
+.services .container .services-container 
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+    gap: 60px;
+    margin-top: 100px;
+}
+.services .container .services-container .col .images img{width: 250px;}
+.services .container .services-container .col .images {position: relative;}
+.services .container .services-container .col .images::before
+{
+    content: "";
+    width: 100px;
+    display: block;
+    height: calc(100% + 80px);
+    background-color: var(--secondary-color);
+    position: absolute;
+    right: 50px;
+    top: -40px;
+    z-index: -1;
+}
+@media(max-width:1200px)
+{
+    .services .container .services-container .col .images-column {display: none;}
+}
+.services .container .services-container .col .srv
+{
+    display: flex;
+    margin-bottom: 30px;
+}
+/* hzbt media al srv bta3t almobile */
+@media (max-width:767px)
+{
+.services .container .services-container .col .srv
+    {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+.services .container .services-container .col .srv i
+{
+    color: var(--lon);
+    flex-basis: 60px;/*at3mltha 34an fe almobile yt3aml m3 al i ka tol w 3rd*/
+}
+.services .container .services-container .col .srv .text{
+    flex: 1;/*34an ya4od b2et almsa7a*/
+    color: #777;
+    font-weight: 300;
+    line-height: 1.5;
+}
+.services .container .services-container .col .srv h3{margin: 0 0 20px;}
+/* *****************************khlst kda al services*********************
+********************************hbd2 fe al portoflio**********************/
+.portfolio{background-color: #f6f6f6; padding: 60px;}
+.portfolio .container .box-grid
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+    gap: 60px;
+    margin-top: 100px;
+}
+.box-grid .portoflio-container .fiq{background-color: white; padding-left: 20px;}
+.box-grid .portoflio-container .fiq p {
+    color: #777;
+    line-height: 1.5;
+    padding-bottom: 15px;
+}
+.box-grid .portoflio-container .fiq .images img{ 
+    width: 250px;
+    margin:0 30px;}
+/* *****************************khlst kda al portfolio*********************
+********************************hbd2 fe al about**********************/
+.about{ padding: 0 60px;}
+.about-container{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 100px;
+}
+.about-container .text {
+    padding-left: 130px;
+    line-height: 1.5;
+}
+.about-container .text .text1{font-weight: bold;}
+.about-container .text .text2{position: relative;}
+.about-container .text .text2::before
+{
+    content: "";
+    height: 2px;
+    width: 50%;
+    background-color: var(--lon);
+    position: absolute;
+    top: -8px;
+    left: 0;
+}
+.about-container .image img{z-index: 1; position: relative;}
+.about-container .image{padding-left: 100px; position: relative; }
+.about-container .image::before
+{
+    content: "";
+    background-color: var(--lon);
+    width:50px ;
+    height: 110px;
+    position: absolute;
+    top: -20px;
+    right: -20px;
+}
+.about-container .image::after
+{
+    content: "";
+    background-color: var(--lon);
+    width: 69px;
+    height: 33px;
+    position: absolute;
+    top: 61px;
+    right: -60px;
+}
+@media(max-width:767px){
+    .about-container{
+        display: block;
+    }
+.about-container .image::before, .about-container .image::after {display: none;}
+.about-container .image,
+.about-container .text {text-align: center; margin: 0; font-size: 15px; padding: 0; }
+}
+/* *****************************khlst kda al portfolio*********************
+********************************hbd2 fe al about**********************/
+.contact-us{background-color: #f6f6f6;}
+.details
+{
+    text-align: center;
+    margin: 30px 0;
+}
+.details h2 {color: var(--secondary-color); margin: 10px;}
+.details .link  { 
+    padding-left: 50px;
+    
+    text-decoration: none; color: var(--lon); 
+
+}
+/* .details .link a {text-decoration: none; color: var(--lon);  } */
+.contact-us .details-awy {padding-left: 100px; padding-top: 10px;} 
+@media(max-width:767px)
+{
+    .contact-us .details-awy{
+        font-size: 15px;
+    }
+}
+/* ******************************************************************* */
+.footer{
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 30px 10px;
+    text-align: center;
+    font-size: 16px;
+}
+.footer span{font-weight: bold; color: var(--lon);}
+.myfooter
+{
+    background-color: #191919;
+    color: white;
+    text-align: center;
+    font-size: 23px;
+    font-weight: bold;
+    border-top: 1px solid #ccc;
+    font-style: italic;
+    padding: 10px;
+}
+.myfooter span{font-size: 18px;}
+.myfooter i{color: white; padding: 10px;}
+.myfooter .face:hover{color: #1877F2;}
+.myfooter .insta:hover{color: #dd2a7b;}
+/* end footer */
